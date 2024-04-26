@@ -107,6 +107,9 @@
       @apply shadow-none h-[54px] placeholder:text-grey-300  border-none focus-visible:ring-transparent focus:ring-transparent !important
     }
     .input-field{
-      @apply  focus-visible:ring-offset-0 px-4 shadow-none  border-none focus-visible:ring-transparent !important;
+      @apply  focus-visible:ring-offset-0 px-6 shadow-none  border-none focus-visible:ring-transparent !important;
+    }
+    .textarea{
+      @apply  h-72 bg-grey-50 p-5 rounded-2xl focus-visible:ring-offset-0 px-4 shadow-none  border-none focus-visible:ring-transparent !important;
     }
   }

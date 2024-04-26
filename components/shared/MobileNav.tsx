@@ -13,6 +13,7 @@ import Image from 'next/image'
 import logo from '@/public/assets/images/Logo.png'
 import { Separator } from '../ui/separator'
 import { Button } from '../ui/button'
+import Link from 'next/link'
 
 
 const MobileNav = () => {
@@ -31,7 +32,9 @@ const MobileNav = () => {
                     <Separator className="border-gray-50 my-4" />
                     <NavItem />
                     <Button className='button hover:bg-primary-200 mt-7'>
-                        Create Post
+                        <Link href={'/post/create'}>
+                            Create Post
+                        </Link>
                     </Button>
                 </SheetContent>
             </Sheet>

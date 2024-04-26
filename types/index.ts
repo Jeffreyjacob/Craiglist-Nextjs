@@ -26,7 +26,7 @@ export type CreatePostParams = {
         price: string;
         ItemCondition?: string;
         isAvaliable: boolean;
-        categoryId: string
+        category: string
     }
     path: string
 }
@@ -41,7 +41,7 @@ export type UpdatePostParams = {
         price: string;
         ItemCondition?: string;
         isAvaliable: boolean;
-        categoryId: string
+        category: string
     }
     path: string
 }
@@ -72,17 +72,13 @@ export type Post = {
     imageUrl: string
     price: string;
     ItemCondition?: string;
-    isAvaliable: boolean;
     user: {
         _id: string
         firstName: string
         lastName: string,
         photo: string
     }
-    ItemCategory: {
-        _id: string
-        name: string
-    }
+    ItemCategory: string
 }
 
 // ====== CATEGORY PARAMS

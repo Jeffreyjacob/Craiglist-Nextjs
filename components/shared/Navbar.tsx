@@ -24,7 +24,9 @@ const Navbar = () => {
         </div>
         <div className='flex-center gap-7 '>
           <Button className='button hover:bg-primary-200 hidden md:flex'>
+            <Link href={'/post/create'}>
             Create Post
+            </Link>
           </Button>
           <UserButton afterSignOutUrl='/' />
           <MobileNav />

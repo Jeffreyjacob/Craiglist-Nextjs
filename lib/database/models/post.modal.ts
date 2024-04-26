@@ -1,17 +1,17 @@
-import {Document,Schema,model,Models, models} from 'mongoose';
+import {Document,Schema,model, models} from 'mongoose';
 
 export interface IPost extends Document{
    _id:string;
    title:string;
-   location?:string;
+   location:string;
    createdAt:Date;
-   description?:string;
+   description:string;
    imageUrl:string;
    price:string;
    ItemCondition?:string;
    isAvaliable:boolean;
-   ItemCategory:{_id:String,name:String};
-   user:{_id:String,firstName:String,lastName:String,photo:String}
+   ItemCategory:string;
+   userCreating:{_id:String,firstName:String,lastName:String,photo:String}
 }
 
 const PostSchema = new Schema({
@@ -20,11 +20,11 @@ const PostSchema = new Schema({
     createdAt:{type:Date,default:Date.now},
     description:{type:String},
     imageUrl:{type:String,required:true},
-    price:{type:String,required:true},
+    price:{type:String},
     ItemCondition:{type:String},
-    isAvaliable:{type:Boolean,default:true},
-    ItemCategory:{type:Schema.Types.ObjectId,ref:'Category'},
-    user:{type:Schema.Types.ObjectId,ref:"User"}
+    isAvaliable:{type:Boolean,default:false},
+    ItemCategory:{type:String},
+    userCreating:{type:Schema.Types.ObjectId,ref:"User"}
 })
 
 const Post = models.Post || model('Post',PostSchema);
