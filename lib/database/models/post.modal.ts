@@ -11,7 +11,7 @@ export interface IPost extends Document{
    ItemCondition?:string;
    isAvaliable:boolean;
    ItemCategory:string;
-   userCreating:{_id:String,firstName:String,lastName:String,photo:String}
+   userCreating:{_id:String,firstName:String,lastName:String}
 }
 
 const PostSchema = new Schema({

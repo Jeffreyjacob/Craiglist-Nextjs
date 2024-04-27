@@ -13,7 +13,7 @@ const SearchBar = ({className}:{className:string}) => {
             <DropDown className='select-field w-fit gap-3 text-[11px] md:text-[14px]  text-grey-400 font-[600]' selectValue='For sale'
             value={selectcategory} onChangeHandler={()=>setSelectCategory}/>
             <Input type='text' placeholder='Search here' className='input-field' />
-            <Button className='bg-[#fffff] h-fit shadow-none text-grey-50 hover:bg-[#F5F5F5]'>
+            <Button className='bg-[#fffff] h-fit shadow-none text-[#000000] hover:bg-[#F5F5F5]'>
                 <MagnifyingGlassIcon className='w-[24px] h-[24px]' />
             </Button>
         </div>

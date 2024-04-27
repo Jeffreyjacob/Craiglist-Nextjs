@@ -38,7 +38,8 @@ module.exports = withUt({
           100:'#E6E6E6',
           200:'#999999',
           300:'#AAAAAA',
-          400:'#666666'
+          400:'#666666',
+          600:'#555555'
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
