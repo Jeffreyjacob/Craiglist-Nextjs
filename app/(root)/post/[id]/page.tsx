@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import PostRow from '@/components/shared/PostRow';
 import { IPost } from '@/lib/database/models/post.modal';
 import PostCard from '@/components/shared/PostCard';
+import CheckoutButton from '@/components/shared/checkoutButton';
 
 const page = async ({ params: { id }, searchParams }: SearchParamProps) => {
   const post: Post = await getPostbyId(id);
@@ -58,9 +59,7 @@ const page = async ({ params: { id }, searchParams }: SearchParamProps) => {
               </p>
             </div>
             {/**Buy Item button */}
-            <Button className='w-[100px] my-4 text-[17px] py-5 bg-primary-400 hover:bg-primary-50 rounded-full'>
-              Buy
-            </Button>
+             <CheckoutButton post={post}/>
             {/**User Profile */}
             <div className='flex flex-row gap-4 items-center mt-4'>
               <Image src={post.userCreating.photo} alt='user-profile'
@@ -79,10 +78,10 @@ const page = async ({ params: { id }, searchParams }: SearchParamProps) => {
       {/**Related Items */}
       <div className='w-full md:mb-9 mb-7'>
         <h3 className='text-[19px] font-semibold mt-7'>Related Items</h3>
-         <div className='flex flex-col md:flex-row max-md:mx-4 max-md:justify-center mt-6'>
+         <div className='grid max-md:grid-col md:grid-cols-2 max-w-4xl lg:grid-cols-3 max-md:mx-4 max-md:justify-center mt-6'>
             {
               relatedItem?.data.map((post:Post,index:any)=>(
-                <div key={post._id} className='mx-4'>
+                <div key={post._id} className='mx-4 my-4'>
                   <PostCard post={post}/>
                 </div>
               ))
