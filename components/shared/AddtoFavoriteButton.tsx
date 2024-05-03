@@ -3,7 +3,7 @@
 import React from 'react';
 import { HeartFilledIcon } from '@radix-ui/react-icons';
 import { HeartIcon } from '@heroicons/react/24/outline';
-import { AddFavoriteList, RemoveFromFavorite } from '@/lib/actions/favorite.action';
+// import { AddFavoriteList, RemoveFromFavorite } from '@/lib/actions/favorite.action';
 import { Post } from '@/types';
 import { useRouter } from 'next/navigation';
 
@@ -21,28 +21,28 @@ type Props = {
 const AddtoFavoriteButton = async ({ title, price, imageUrl, userId, location,
     isAvaliable, postId }: Props) => {
 const router = useRouter()
-    async function AddToFavorite() {
-        await AddFavoriteList(
-            {
-                postId,
-                userId,
-                title,
-                price,
-                imageUrl,
-                location
-            }
-        )
-        router.refresh()
-    }
+    // async function AddToFavorite() {
+    //     await AddFavoriteList(
+    //         {
+    //             postId,
+    //             userId,
+    //             title,
+    //             price,
+    //             imageUrl,
+    //             location
+    //         }
+    //     )
+    //     router.refresh()
+    // }
 
-    async function RemovefromFavoriteHandle(){
-      const removeItem =  await RemoveFromFavorite({
-        postId,
-        userId
-       })
-       router.refresh()
-       console.log(removeItem)
-    }
+    // async function RemovefromFavoriteHandle(){
+    //   const removeItem =  await RemoveFromFavorite({
+    //     postId,
+    //     userId
+    //    })
+    //    router.refresh()
+    //    console.log(removeItem)
+    // }
 
     return (
         <>
