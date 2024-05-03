@@ -48,12 +48,12 @@ const router = useRouter()
         <>
             {
                 isAvaliable ? (
-                    <button onClick={RemovefromFavoriteHandle}>
+                    <button >
                     <HeartFilledIcon className='w-[22px] h-[22px] text-grey-200 transition duration-300 transform hover:scale-110' />
                     </button>
                 ) :
                     (
-                        <button onClick={AddToFavorite}>
+                        <button>
                             <HeartIcon className='w-[22px] h-[22px] text-grey-200 transition duration-300 transform hover:scale-110' />
                         </button>
                     )
