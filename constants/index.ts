@@ -1,3 +1,9 @@
+import communityImage from '@/public/assets/images/Rectangle 7.png';
+import ForsaleImage from '@/public/assets/images/Rectangle 7 (1).png';
+import HousingImage from '@/public/assets/images/Rectangle 7 (2).png';
+import JobImage from '@/public/assets/images/Rectangle 7 (3).png';
+import ServiceImage from '@/public/assets/images/Rectangle 7 (4).png';
+
 export const  HeaderLink = [
     {
         label:"Home",
@@ -31,3 +37,11 @@ export const HelpLink = [
     {name:"Site Map"},
     {name:"Terms"}
 ]
+
+export const SelectCategoryLists = [
+    {name:'Community',image:communityImage},
+    {name:'For Sale',image:ForsaleImage},
+    {name:'Housing',image:HousingImage},
+    {name:'Jobs',image:JobImage},
+    {name:'Services',image:ServiceImage},
+] 

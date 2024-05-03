@@ -1,5 +1,6 @@
 import {Document,Schema,model, models} from 'mongoose';
 
+
 export interface IPost extends Document{
    _id:string;
    title:string;
@@ -11,7 +12,7 @@ export interface IPost extends Document{
    ItemCondition?:string;
    isAvaliable:boolean;
    ItemCategory:string;
-   userCreating:{_id:String,firstName:String,lastName:String}
+   userCreating:{_id:String,firstName:String,lastName:String,photo:String}
 }
 
 const PostSchema = new Schema({
@@ -23,7 +24,7 @@ const PostSchema = new Schema({
     price:{type:String},
     ItemCondition:{type:String},
     isAvaliable:{type:Boolean,default:false},
-    ItemCategory:{type:String},
+    ItemCategory:{type:String,required:true},
     userCreating:{type:Schema.Types.ObjectId,ref:"User"}
 })
 

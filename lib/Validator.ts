@@ -13,5 +13,5 @@ export const PostFormScehma = z.object({
     price:z.string(),
     ItemCondition:z.string(),
     isAvaliable:z.boolean(),
-    category:z.string()
+    ItemCategory:z.string(),
 })

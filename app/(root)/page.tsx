@@ -9,15 +9,20 @@ import {
 } from "@/components/ui/carousel"
 import { getAllPosts } from "@/lib/actions/post.action";
 import PostCard from "@/components/shared/PostCard";
+import { IPost } from "@/lib/database/models/post.modal";
+import SelectCategory from "@/components/shared/SelectCategory";
+import PostRow from "@/components/shared/PostRow";
 
 export default async function Home() {
     
-  const posts = await getAllPosts({
-    query:'',
-    category:'',
-    page:1,
-    limit:10
-  })
+const Post = await getAllPosts({
+  query:'',
+  category:'',
+  limit:10,
+  page:1
+})
+
+
   return (
     <main>
       {/**Header section */}
@@ -31,28 +36,15 @@ export default async function Home() {
         </p>
         <SearchBar className="flex-center bg-white md:w-[800px] w-full    rounded-full shadow-md border-[1px] border-[#DDDDDD] px-4" />
       </div>
-
-
-      <div className="w-full flex justify-center items-center my-5 ">
-        <Carousel
-          opts={{
-            align: "center",
-          }}
-          className="max-w-sm justify-center items-center"
-        >
-          <CarouselContent>
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 basis-1/2">
-                <div className="p-1">
-                  <PostCard post={posts?.data}/>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </div>
+        
+        <div className="wrapper flex flex-col justify-center items-center my-10 mb-5">
+          <h3 className="text-[24px] font-semibold text-[#555555] mb-8">Some Categories</h3>
+          <SelectCategory/>
+        </div>
+          
+          {/**Post row */}
+          <PostRow Post={Post?.data}/>
+        
 
     </main>
   );

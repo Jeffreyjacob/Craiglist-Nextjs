@@ -7,7 +7,7 @@ export interface IFavorite extends Document{
     createdAt:Date;
     imageUrl:string;
     price:string;
-    postAdded:boolean;
+    postId:string;
     user:{_id:String,Firstname:String,LastName:String}
 }
 
@@ -17,7 +17,7 @@ const FavoriteSchema = new Schema({
     createdAt:{type:Date,default:Date.now},
     imageUrl:{type:String,required:true},
     price:{type:String},
-    postAdded:{type:Boolean,default:false},
+    postId:{type:String},
     user:{type:Schema.Types.ObjectId,ref:"User"}
 })
 

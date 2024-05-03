@@ -1,3 +1,5 @@
+import { IPost } from "@/lib/database/models/post.modal"
+
 // ====== USER PARAMS
 export type CreateUserParams = {
     clerkId: string
@@ -26,7 +28,7 @@ export type CreatePostParams = {
         price: string;
         ItemCondition?: string;
         isAvaliable: boolean;
-        category: string
+        ItemCategory: string;
     }
     path: string
 }
@@ -34,6 +36,7 @@ export type CreatePostParams = {
 export type UpdatePostParams = {
     userId: string
     post: {
+        _id: string
         title: string
         description: string
         location: string
@@ -41,7 +44,7 @@ export type UpdatePostParams = {
         price: string;
         ItemCondition?: string;
         isAvaliable: boolean;
-        category: string
+        ItemCategory: string;
     }
     path: string
 }
@@ -64,6 +67,13 @@ export type GetPostByUserParams = {
     page: number
 }
 
+export type GetRelatedPostsByCategoryParams = {
+    category: string
+    postId: string
+    limit?: number
+}
+
+
 export type Post = {
     _id: string
     title: string
@@ -72,12 +82,14 @@ export type Post = {
     imageUrl: string
     price: string;
     ItemCondition?: string;
-    user: {
+    userCreating: {
         _id: string
         firstName: string
         lastName: string,
         photo: string
     }
+    createdAt: string,
+    isAvaliable: boolean,
     ItemCategory: string
 }
 
@@ -105,28 +117,61 @@ export type CreateOrderParams = {
 export type GetOrdersByPostParams = {
     postId: string
     searchString: string
-  }
-  
-  export type GetOrdersByUserParams = {
+}
+
+export type GetOrdersByUserParams = {
     userId: string | null
     limit?: number
     page: string | number | null
-  }
-  
-  // ====== URL QUERY PARAMS
-  export type UrlQueryParams = {
+}
+
+// ====== URL QUERY PARAMS
+export type UrlQueryParams = {
     params: string
     key: string
     value: string | null
-  }
-  
-  export type RemoveUrlQueryParams = {
+}
+
+export type RemoveUrlQueryParams = {
     params: string
     keysToRemove: string[]
-  }
-  
-  export type SearchParamProps = {
+}
+
+export type SearchParamProps = {
     params: { id: string }
     searchParams: { [key: string]: string | string[] | undefined }
-  }
-  
+}
+
+export type CreateFavoriteParams = {
+    postId: string,
+    userId: string,
+    title: string,
+    price: string,
+    imageUrl: string,
+    location: string
+
+}
+export type RemoveFromFavoriteParams = {
+    postId: string,
+    userId: string
+}
+
+export type FavoriteParams = {
+    id: string,
+    title: string,
+    location: string,
+    price: string,
+    postId: string,
+    user: string
+}
+
+export const PostDefaultValues = {
+    title: "",
+    description: "",
+    location: "",
+    imageUrl: "",
+    price: "",
+    ItemCondition: "",
+    isAvaliable: false,
+    ItemCategory: "",
+}
