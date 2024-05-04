@@ -49,7 +49,7 @@ const PostForm = ({ userId, type, post, postId }: Props) => {
     if (type === 'Create') {
       try {
         const newPost = await createPost({
-          post: { ...values, imageUrl: uploadedImageUrl,isAvaliable:false },
+          post: { ...values, imageUrl: uploadedImageUrl,isAvaliable:true},
           userId,
           path: '/profile'
         })
