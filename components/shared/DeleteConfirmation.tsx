@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useTransition } from 'react';
 import {
     AlertDialog,
     AlertDialogAction,
@@ -11,9 +11,13 @@ import {
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
 import { TrashIcon } from '@heroicons/react/24/outline';
+import { DeletePost } from '@/lib/actions/post.action';
+import { usePathname } from 'next/navigation';
   
 
-const DeleteConfirmation = () => {
+const DeleteConfirmation = ({postId}:{postId:string}) => {
+  const pathname = usePathname();
+  let [isPending,startTransition] = useTransition();
   return (
     <AlertDialog>
     <AlertDialogTrigger asChild>
@@ -28,7 +32,9 @@ const DeleteConfirmation = () => {
       </AlertDialogHeader>
       <AlertDialogFooter>
         <AlertDialogCancel>Cancel</AlertDialogCancel>
-        <AlertDialogAction className='bg-primary-400'>Continue</AlertDialogAction>
+        <AlertDialogAction className='bg-primary-400' onClick={()=>startTransition( async ()=>{
+          await DeletePost({postId,path:pathname})}
+        )}  >Continue</AlertDialogAction>
       </AlertDialogFooter>
     </AlertDialogContent>
   </AlertDialog>

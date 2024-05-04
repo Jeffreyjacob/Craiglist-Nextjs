@@ -56,7 +56,7 @@ const PostCard = ({ post }: Props) => {
                                             <Link href={`/post/${post._id}/update`}>
                                                 <PencilSquareIcon className='w-[22px] h-[22px] mb-2 text-blue-600' />
                                             </Link>
-                                            <DeleteConfirmation/>
+                                            <DeleteConfirmation postId={post._id}/>
                                     </PopoverContent>
                                 </Popover>
                             )
