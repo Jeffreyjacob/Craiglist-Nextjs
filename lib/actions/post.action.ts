@@ -134,3 +134,21 @@ export const getRelatedPostbyCategory = async ({category,
       handleError(error)
     }
 }
+
+{/**Get Post by user */}
+
+export const getPostByUser = async (userId:string)=>{
+   try{
+     await connectToDatabase()
+     const user = await User.findById(userId)
+     if(!user){
+       throw new Error("user not found")
+     }
+     const postByUser = await Post.find(
+      {userCreating: userId}).populate({path:"userCreating",model:User,select:"_id"})
+      return JSON.parse(JSON.stringify(postByUser))
+   }catch(error){
+      console.log(error)
+      handleError(error)
+   }
+}

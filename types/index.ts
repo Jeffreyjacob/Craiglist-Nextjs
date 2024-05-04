@@ -125,6 +125,20 @@ export type GetOrdersByUserParams = {
     page: string | number | null
 }
 
+export type GetOrderByUser = {
+    _id: string,
+    createdAt: string,
+    stripeId: string
+    totalAmount: string,
+    post: {
+      _id:string,
+      title:string,
+      imageUrl:string
+    },
+    buyer:string,
+    __v: number
+}
+
 // ====== URL QUERY PARAMS
 export type UrlQueryParams = {
     params: string

@@ -32,7 +32,7 @@ const CheckoutButton =async  ({ post }: Props) => {
                         </SignedIn>
                     </>
                 ) : (
-                    <h2>
+                    <h2 className='text-[18px] font-semibold text-green-400 mt-3'>
                         SOLD
                     </h2>
                 )
