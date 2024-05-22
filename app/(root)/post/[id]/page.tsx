@@ -26,7 +26,7 @@ const page = async ({ params: { id }, searchParams }: SearchParamProps) => {
       <div className='flex flex-col'>
         <div className='flex flex-col lg:flex-row my-7 mx-4 gap-7'>
           <Image src={post.imageUrl} alt='post-image'
-            width={470} height={390} className='rounded-[10px]' />
+            width={470} height={390} className='rounded-[10px] w-full' />
           <div className='flex flex-col'>
             <h3 className='text-[22px] font-normal text-[#555555] mb-4'>
               {post?.title}

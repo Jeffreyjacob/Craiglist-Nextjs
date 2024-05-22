@@ -11,7 +11,8 @@ import MobileNav from './MobileNav';
 
 const Navbar = () => {
   return (
-    <div className='max-w-6xl lg:px-auto p-5 md:px-10 xl:px-0 w-full flex-between shadow-md'>
+    <div className=' shadow-md flex justify-center'>
+        <div className='max-w-6xl lg:px-auto p-5 md:px-10 xl:px-0 w-full flex-between'>
       <Link href={'/'}>
         <Image src={logo}
           alt='logo'
@@ -43,6 +44,7 @@ const Navbar = () => {
       </SignedOut>
 
     </div>
+    </div> 
   )
 }
 

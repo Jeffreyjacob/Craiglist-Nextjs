@@ -27,7 +27,7 @@ const Post = await getAllPosts({
     <main>
       {/**Header section */}
       <div className="flex flex-col  justify-center items-center px-5 sm:px-4 md:px-6 lg:px-0"
-        style={{ width: "100%", height: '360px',backgroundImage:'url("/assets/images/Rectangle 3.png")'}}>
+        style={{ width: "100%", height: '360px',backgroundImage:'url("https://ucarecdn.com/23b89b0a-339d-40a5-bb3a-2a3a70dc458f/Rectangle3.png")'}}>
         <p className="md:text-[46px] sm:text-[29px] text-[22px] text-white font-normal leading-tight mb-5 line-clamp-2">
           The World's Largest <br />
           <span className="text-primary-200 font font-semibold">
